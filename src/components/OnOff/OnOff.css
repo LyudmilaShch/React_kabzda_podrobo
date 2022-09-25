@@ -1,0 +1,41 @@
+.roundRed {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: darkred;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.roundGreen {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: darkgreen;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.rectangle {
+    width: 3em;
+    height: 2em;
+    background: white;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.rectangleGreen {
+    width: 3em;
+    height: 2em;
+    background: darkgreen;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.rectangleRed {
+    width: 3em;
+    height: 2em;
+    background: darkred;
+    border: 1px solid black;
+    display: inline-block;
+}

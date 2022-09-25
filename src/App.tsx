@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import {OnOff} from "./components/OnOff/OnOff";
+
 
 function sum(a:number, b:number) {
 
@@ -19,6 +21,7 @@ function App() {
     console.log("App rendering")
     return (
         <div>
+            <OnOff OnOrOff={true}/>
             <PageTitle title={"This is APP component"}/>
             <PageTitle title={"My friends"}/>
             Article 1
@@ -31,6 +34,7 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+
         </div>
     );
 }
