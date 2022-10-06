@@ -31,11 +31,11 @@ function App() {
 
     return (
         <div className={"App"}>
-            <OnOff value = {OnOffValue} onClick={setOnOffValue}/>
-            <UnControlledOnOff/>
+            <OnOff on = {OnOffValue} onClick={setOnOffValue}/>
+            <UnControlledOnOff onChange={setOnOffValue}/> {OnOffValue.toString()}
 
-            <UnControlledAccordion titleValue={"Menu"}/>
-            <Accordion titleValue={"Users"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <UnControlledAccordion titleValue={"Не контролируемое Menu"}/>
+            <Accordion titleValue={"Контролируемое Users"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
 
             <UnControlledRating/>
             <Rating value={ratingValue} onClick={setRatingValue}/>

@@ -1,22 +1,22 @@
 import React, {useState} from "react";
 
 type OnOffPropsType = {
-    value: boolean,
-    onClick: (value: boolean) => void
+    on: boolean,
+    onClick: (on: boolean) => void
 }
 
 export function OnOff(props: OnOffPropsType) {
     console.log("OnOff rendering");
 
     /*let [on, setOn] = useState<boolean>(props.value);*/
-    console.log("on:  " + props.value);
+    console.log("on:  " + props.on);
     const onStale = {
         width: "50px",
         height: "30px",
         border: "1px solid black",
         display: "inline-block",
         padding: "2px",
-        backgroundColor: props.value ? "green" : "white"
+        backgroundColor: props.on ? "green" : "white"
     };
     const offStale = {
         width: "50px",
@@ -25,7 +25,7 @@ export function OnOff(props: OnOffPropsType) {
         display: "inline-block",
         marginLeft: "2px",
         padding: "2px",
-        backgroundColor: props.value ? "white" : "red"
+        backgroundColor: props.on ? "white" : "red"
     };
     const indicatorStyle = {
         width: "30px",
@@ -34,7 +34,7 @@ export function OnOff(props: OnOffPropsType) {
         border: "1px solid black",
         display: "inline-block",
         marginLeft: "5px",
-        backgroundColor: props.value ? "green" : "red"
+        backgroundColor: props.on ? "green" : "red"
     };
 
     return (
