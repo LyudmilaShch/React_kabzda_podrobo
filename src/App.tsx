@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import {OnOffHomeWork} from "./components/OnOffHomeWork/OnOffHomeWork";
 import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
+import {UnControlledOnOff} from "./components/UnControlledOnOff/UnControlledOnOff";
 
 
 function sum(a: number, b: number) {
@@ -19,21 +19,28 @@ function sum(a: number, b: number) {
 
 //function declaration
 function App() {
-    debugger
     //полезное что-то
     //обязана вернуть JSX
+
+
     console.log("App rendering")
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+    let [OnOffValue, setOnOffValue] = useState<boolean>(true);
+
     return (
-        <div>
-            <OnOff />
-            <OnOff />
+        <div className={"App"}>
+            <OnOff value = {OnOffValue} onClick={setOnOffValue}/>
+            <UnControlledOnOff/>
 
             <UnControlledAccordion titleValue={"Menu"}/>
-            <UnControlledAccordion titleValue={"Users"}/>
+            <Accordion titleValue={"Users"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
 
-            <UnControlledRating />
+            <UnControlledRating/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
 
-{/*            <div>Мое решение</div>
+            {/*            <div>Мое решение</div>
             <OnOffHomeWork OnOrOff={false}/>
             <OnOffHomeWork OnOrOff={true}/>
             <PageTitle title={"This is APP component"}/>
