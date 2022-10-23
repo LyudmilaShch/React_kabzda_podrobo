@@ -2,12 +2,13 @@ import React, {useState} from "react";
 
 type UnControlledOnOffPropsType = {
     onChange: (on: boolean) => void
+    defaultOn?: boolean
 }
 
 export function UnControlledOnOff(props: UnControlledOnOffPropsType) {
 
 
-    let [on, setOn] = useState(false);
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false );
     console.log("on:  " + on);
     const onStale = {
         width: "50px",

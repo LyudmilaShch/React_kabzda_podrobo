@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import {UnControlledOnOff} from "./components/UnControlledOnOff/UnControlledOnOff";
+import {Accordion} from "./components/Accordion/Accordion";
 
 
 function sum(a: number, b: number) {

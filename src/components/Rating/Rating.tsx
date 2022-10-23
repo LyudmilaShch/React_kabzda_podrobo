@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -10,6 +10,8 @@ type RatingPropsType = {
 
 export function Rating(props: RatingPropsType) {
     console.log("Rating rendered")
+
+
 
     return (
         <div>
