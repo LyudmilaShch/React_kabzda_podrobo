@@ -6,7 +6,7 @@ import {action} from "@storybook/addon-actions";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'OnOff',
+    title: 'components/controlled/OnOff',
     component: OnOff
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     }  as ComponentMeta<typeof OnOff>;

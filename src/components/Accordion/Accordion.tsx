@@ -1,16 +1,23 @@
 import React from "react";
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
+    /**
+     * elements display
+     */
     collapsed: boolean
     onChange: () => void
+    /**
+     * optional color of header text
+     */
+    color: string
 }
 
 export function Accordion (props: AccordionPropsType) {
     console.log("Accordion rendering")
 
         return <div>
-            <AccordionTitle title={props.titleValue} onChange={props.onChange}/>
+            <AccordionTitle title={props.titleValue} onChange={props.onChange} color={props.color}/>
             { !props.collapsed && <AccordionBody />}
         </div>
     }
@@ -32,12 +39,13 @@ export function Accordion (props: AccordionPropsType) {
 type AccordionTitlePropsType = {
     title: string,
     onChange: () => void,
+    color?: string
 }
 
 function AccordionTitle(props:AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return (
-        <h3 onClick={(e) => props.onChange()}>---{props.title}---</h3>
+        <h3 onClick={(e) => props.onChange()}  style={{color: props.color ? props.color : 'black'}}>---{props.title}---</h3>
     )
 }
 

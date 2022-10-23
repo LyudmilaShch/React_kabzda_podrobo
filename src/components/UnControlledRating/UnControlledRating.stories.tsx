@@ -5,7 +5,7 @@ import {action} from "@storybook/addon-actions";
 
 
 export default {
-    title: 'UnControlledRating',
+    title: 'components/Uncontrolled/UnControlledRating',
     component: UnControlledRating
     }  as ComponentMeta<typeof UnControlledRating>;
 

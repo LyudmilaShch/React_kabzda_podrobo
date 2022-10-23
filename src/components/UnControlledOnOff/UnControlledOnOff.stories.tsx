@@ -5,7 +5,7 @@ import {UnControlledOnOff} from "./UnControlledOnOff";
 
 
 export default {
-    title: 'UnControlledOnOff',
+    title: 'components/Uncontrolled/UncontrolledOnOff',
     component: UnControlledOnOff
 }  as ComponentMeta<typeof UnControlledOnOff>;
 

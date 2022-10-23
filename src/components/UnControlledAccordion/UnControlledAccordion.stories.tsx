@@ -5,7 +5,7 @@ import {UnControlledAccordion} from "./UnControlledAccordion";
 
 
 export default {
-    title: 'UnControlledAccordion',
+    title: 'components/Uncontrolled/UnControlledAccordion',
     component: UnControlledAccordion
 } as ComponentMeta<typeof UnControlledAccordion>;
 
