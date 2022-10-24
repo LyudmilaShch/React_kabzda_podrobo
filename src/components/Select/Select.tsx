@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import s from './Select.module.css'
 
 type ItemType = {
     title: string
@@ -6,7 +7,7 @@ type ItemType = {
 }
 
 export type SelectPropsType = {
-    value: any
+    valueTitle: any
     collapsed: boolean
     onChange: () => void
     onClick: (value: any) => void
@@ -14,16 +15,14 @@ export type SelectPropsType = {
 }
 
 export function Select(props: SelectPropsType) {
-
+    let SelectedItem = props.items.find(el => el.value === props.valueTitle)
+    const selectClass = s.selectList
+        + (!props.collapsed ? ' ' + s.open : '')
     return (
         <div>
-            <SelectTitle title={(props.items.find(el => el.value === 1)).title}></SelectTitle>
-            {!props.collapsed && <SelectList items={props.items} onClick={props.onClick} />}
-            {/*<div>*/}
-            {/*    value*/}
-            {/*    /!*{props.items.find(el => el.value === props.value)}*!/*/}
-            {/*</div>*/}
-            {/*{props.items.map(i => <div>{i.title}</div>)}*/}
+            <div><SelectTitle title={SelectedItem ? SelectedItem.title : " "}
+                                                        onChange={props.onChange}></SelectTitle></div>
+            <div className={selectClass}> {!props.collapsed && <SelectList items={props.items} onClick={props.onClick}/>} </div>
 
         </div>
     )
@@ -34,22 +33,25 @@ type SelectTitlePropsType = {
     onChange: () => void
 }
 
-function SelectTitle(props: SelectTitlePropsType){
+function SelectTitle(props: SelectTitlePropsType) {
     return (
-        <h3 onClick={(e) => props.onChange()}>{props.title}</h3>
+        <h3 onClick={(e) => props.onChange()} className={s.selectTitle}>{props.title} <i className={s.arrowDown}></i></h3>
     )
 }
 
 
-export type SelectListPropsType= {
+export type SelectListPropsType = {
     items: ItemType[]
-    onClick:(value: any) => void
+    onClick: (value: any) => void
 }
 
-function SelectList(props: SelectListPropsType){
+function SelectList(props: SelectListPropsType) {
+
     return (
         <div>
-            {props.items.map((i, index) => <div onClick={() => {props.onClick(i.value)}} key={index}>{i.title}</div>)}
+            {props.items.map((i, index) => <div onClick={() => {
+                props.onClick(i.value)
+            }} key={index}>{i.title}</div>)}
         </div>
     )
 }
