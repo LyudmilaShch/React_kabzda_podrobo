@@ -9,6 +9,7 @@ export default {
 } as ComponentMeta<typeof SelectMemoHW>;
 
 export const Value = () => {
+    const [counter, setCounter] = useState(0)
     const [includesM, setIncludesM] = useState(1);
     const [citiesFromRussia, setCitiesFromRussia] = useState(1);
     const [moreMillion, setMoreMillion] = useState(1);
@@ -21,25 +22,23 @@ export const Value = () => {
         {title: "Gomel", countryId: 2, citizens: 503984, value: 6}
     ])
     const arrayIncludesM = useMemo(() => {
-        console.log("arrayIncludesM")
         const arrayIncludesM = cities.filter(u => u.title.toLowerCase().indexOf("m") > -1)
         return arrayIncludesM
-    }, [cities])
+    }, [includesM])
     const arrayCitiesFromRussia = useMemo(() => {
-        console.log("arrayCitiesFromRussia")
         const arrayCitiesFromRussia = cities.filter(u => u.countryId === 1)
         return arrayCitiesFromRussia
-    }, [cities])
+    }, [citiesFromRussia])
     const citizensMoreMillion = useMemo(() => {
-        console.log("citizensMoreMillion")
         const citizensMoreMillion = cities.filter(u => u.citizens >= 1000000)
         return citizensMoreMillion
-    }, [cities])
-
+    }, [moreMillion])
 
 
     return (
         <>
+            <button onClick={() => setCounter(counter + 1)}>+</button>
+            {counter}
             <SelectMemoHW
                 value={includesM}
                 onChange={setIncludesM}
