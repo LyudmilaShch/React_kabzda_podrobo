@@ -3,10 +3,11 @@ import './App.css';
 
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import UnControlledAccordion from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 import {UnControlledOnOff} from "./components/UnControlledOnOff/UnControlledOnOff";
 import {Accordion} from "./components/Accordion/Accordion";
+import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
+import {Clock} from "./components/Clock/Clock";
 
 
 function sum(a: number, b: number) {
@@ -36,10 +37,9 @@ function App() {
             <UnControlledOnOff onChange={setOnOffValue}/> {OnOffValue.toString()}
 
             <UnControlledAccordion titleValue={"Не контролируемое Menu"}/>
-            <Accordion titleValue={"Контролируемое Users"} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
 
-            <UnControlledRating/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Clock />
 
             {/*            <div>Мое решение</div>
             <OnOffHomeWork OnOrOff={false}/>

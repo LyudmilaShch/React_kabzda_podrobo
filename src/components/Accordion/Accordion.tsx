@@ -7,16 +7,14 @@ type ItemType = {
 
 export type AccordionPropsType = {
     titleValue: string
-    /**
-     * elements display
-     */
+    // /**
+    //  * elements display
+    //  */
     collapsed: boolean
     onChange: () => void
     items: ItemType[]
     onClick: (value: any) => void
-    /**
-     * optional color of header text
-     */
+    // /** optional color of header text*/
     color: string
 }
 
